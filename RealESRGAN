@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Get the current directory
+current_dir=$(pwd)
+
+# Get the selected file path
+file_path="$1"
+
+# Check if a file was selected
+if [ -z "$file_path" ]; then
+  echo "No file selected"
+  exit 1
+fi
+
+# Check if the file exists
+if [ ! -f "$file_path" ]; then
+  echo "File not found: $file_path"
+  exit 1
+fi
+
+# Get the file name and extension
+file_name=$(basename "$file_path")
+file_ext="${file_name##*.}"
+
+# Construct the output file name
+output_file="new_$file_name"
+
+# Construct the RealESRGAN command
+command="cd $HOME
+echo \"Input file: $file_path\"
+./RealESRGAN-repo/realesrgan-ncnn-vulkan \
+    -i \"$current_dir/$file_path\" \
+    -o \"$current_dir/$output_file\"
+echo \"RealESRGAN completed successfully.\"
+echo \"Output saved as: $output_file\"
+exit 0"
+#  read -p \"Press Enter to exit...\"
+gnome-terminal --title="RealESRGAN Terminal" -- bash -c "$command"
+
+# Exit with a success status
+exit 0
