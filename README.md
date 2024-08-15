@@ -1,14 +1,19 @@
 # realesgan-for-ubuntu-nautilus
 
-RealESGAN for Ubuntu - Nautilus
+Upscale your images!
+
+<img src="./assets/example.png" height="200" />
+<img src="./assets/example1.png" height="200" />
+<img src="./assets/example2.png" height="200" />
 
 ## About the project
 
-This project implements the portable version of [RealESGAN](https://github.com/xinntao/Real-ESRGAN) for Linux (Ubuntu), integrated with the Nautilus file manager.It allows improving the quality of low-resolution images directly through the Nautilus context menu.
+This project implements the portable version of [RealESGAN](https://github.com/xinntao/Real-ESRGAN) for Linux (Ubuntu), integrated with the Nautilus file manager.
+It allows improving the quality of low-resolution images directly through the Nautilus context menu.
 
 ## How it works
 
-The project adds an option in the Nautilus context menu inside 'scripts' to process images using RealESGAN. When selected, the image is processed and a high-resolution version is generated.
+The project adds an option in the Nautilus context menu to process images using RealESGAN. When selected, the image is processed and a high-resolution version is generated.
 
 ## Installation
 
